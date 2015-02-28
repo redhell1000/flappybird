@@ -44,6 +44,7 @@ function create() {
 
     LS = game.add.text(350,300, "Your Score: "+(score-2).toString());
     GS = game.add.text(350,15,"High Score: "+hscore.toString());
+
     pipes = game.add.group();
 game.physics.startSystem(Phaser.Physics.ARCADE);
     player = game.add.sprite(80, 200, "BL");
@@ -72,8 +73,6 @@ function update() {
 
 
 
-    player.y +=step
-}
 function generate_pipe(){
     var gap_start = game.rnd.integerInRange(1, 5);
     for(var count = 0; count < 8; count++){

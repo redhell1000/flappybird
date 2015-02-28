@@ -49,7 +49,7 @@ game.physics.startSystem(Phaser.Physics.ARCADE);
     player = game.add.sprite(80, 200, "BL");
     game.physics.arcade.enable(player);
     player.body.gravity.y = 170;
-    this.game.input.onDown.add(player_jump);
+    game.input.onDown.add(player_jump);
 generate_pipe();
     var pipe_interval = 1.75;
     game.time.events.loop(pipe_interval * Phaser.Timer.SECOND, generate_pipe);
