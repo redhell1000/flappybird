@@ -49,7 +49,7 @@ game.physics.startSystem(Phaser.Physics.ARCADE);
     player = game.add.sprite(80, 200, "BL");
     game.physics.arcade.enable(player);
     player.body.gravity.y = 170;
-    game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR).onDown.add(player_jump);
+    this.game.input.onDown.add(player_jump);
 generate_pipe();
     var pipe_interval = 1.75;
     game.time.events.loop(pipe_interval * Phaser.Timer.SECOND, generate_pipe);
@@ -68,12 +68,6 @@ function update() {
 }
 
 
-
-
-
-
-    player.y +=step
-}
 function generate_pipe(){
     var gap_start = game.rnd.integerInRange(1, 5);
     for(var count = 0; count < 8; count++){
